@@ -1,1 +1,84 @@
-prova
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astra</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart,
+    .login {
+      margin-right: 20px;
+    }
+
+    .projects {
+      display: flex;
+    }
+
+    .nav-link {
+      padding: 10px;
+    }
+
+    .footer {
+      background-color: #333;
+      padding: 20px;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 style="font-size: 24px;">Astra</h1>
+      <input type="text" placeholder="Carrello" class="cart">
+      <input type="text" placeholder="Login" class="login">
+      <input type="text" placeholder="Ricerca">
+    </div>
+
+    <div class="nav">
+      <div class="projects">
+        <div class="nav-link">Progetti Realizzati</div>
+        <div class="nav-link">Blog</div>
+        <div class="nav-link">Outlet</div>
+      </div>
+    </div>
+
+    <h2>I Prodotti di Astra</h2>
+    <p style="font-size: 20px;">Dai un'impronta di design alla tua casa</p>
+
+    <input type="text" placeholder="Scopri la collezione">
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div>Servizio Clienti</div>
+      <div>Contatto</div>
+      <div>
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">TikTok</a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
