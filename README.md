@@ -2,7 +2,12 @@
 Progetto per esame percorso di Web Design
 A. A. 2023/2024
 Anna Raciopi - matricola 994
+indirizzo Design Prodotto
+Prof. Baccan Matteo
+Corso web design, Acme Novara
 
+# SCOPO DEL PROGETTO
+Sito web prodotti Design azienda Astra
 
-# PROGETTO
-Sito web prodotti Design azienda astra.
+# ELEMENTI DELLA PAGINA
+obbiettivo creazione su un sito web html responsive che comprende i principali elementi della pagina: 
