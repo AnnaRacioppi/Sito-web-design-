@@ -10,4 +10,4 @@ Corso web design, Acme Novara
 Sito web prodotti Design azienda Astra
 
 # ELEMENTI DELLA PAGINA
-obbiettivo creazione su un sito web html responsive che comprende i principali elementi della pagina: 
+obbiettivo creazione su un sito web html responsive 
