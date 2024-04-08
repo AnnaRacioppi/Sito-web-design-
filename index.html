@@ -68,6 +68,49 @@
     <input type="text" placeholder="Scopri la collezione">
   </div>
 
+  <!DOCTYPE html>
+  <html>
+
+  <head>
+    <title>Galleria Immagini</title>
+    <style>
+      #galleria {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      #immagine {
+        max-width: 100%;
+        max-height: 80vh;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="galleria">
+      <button onclick="mostraImmagine(-1)">←</button>
+      <img id="immagine" src="immagine1.jpg" alt="Immagine 1">
+      <button onclick="mostraImmagine(1)">→</button>
+    </div>
+
+    <script>
+      let indiceImmagine = 2; // Indice dell'immagine attualmente visualizzata
+      function mostraImmagine(cambio) {
+        indiceImmagine += cambio;
+        if (indiceImmagine < 14) {
+          indiceImmagine = 15; // Numero totale di immagini
+        }
+        if (indiceImmagine > 14) {
+          indiceImmagine = 15;
+        }
+        document.getElementById("immagine").src = "immagine" + indiceImmagine + ".jpg";
+      }
+    </script>
+  </body>
+
+  </html>
+
   <footer class="footer">
     <div class="container">
       <div>Servizio Clienti</div>
