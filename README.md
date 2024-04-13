@@ -20,3 +20,10 @@ obbiettivo creazione su un sito web html responsive
 - profili social
 - cookies
 - opzione acquisto
+
+# STRUTTURA PAGINA
+- Html5
+
+#REALIZZATO TRAMITE:
+- Codepen.io
+- chat gpt
