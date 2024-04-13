@@ -11,3 +11,12 @@ Sito web prodotti Design azienda Astra
 
 # ELEMENTI DELLA PAGINA
 obbiettivo creazione su un sito web html responsive 
+- nome azienda
+- logo 
+- burger menu
+- descrizione azienda
+- gallery
+- contatti
+- profili social
+- cookies
+- opzione acquisto
