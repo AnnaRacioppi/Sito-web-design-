@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="it">
 
+<!DOCTYPE html>
+<html lang="it">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,16 +29,7 @@
 
     .cart,
     .login {
-      margin-right: 20px;
-    }
-
-    .projects {
-      display: flex;
-    }
-
-    .nav-link {
-      padding: 10px;
-    }
+      margin-right: 20px; }
 
     .footer {
       background-color: #333;
@@ -52,8 +46,8 @@
       <input type="text" placeholder="Carrello" class="cart">
       <input type="text" placeholder="Login" class="login">
       <input type="text" placeholder="Ricerca">
+  
     </div>
-
     <div class="nav">
       <div class="projects">
         <div class="nav-link">Progetti Realizzati</div>
@@ -65,20 +59,13 @@
     <h2>I Prodotti di Astra</h2>
     <p style="font-size: 20px;">Dai un'impronta di design alla tua casa</p>
 
-    <input type="text" placeholder="Scopri la collezione">
-  </div>
 
-  <!DOCTYPE html>
-  <html>
-
-  <head>
     <title>Galleria Immagini</title>
     <style>
       #galleria {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-      }
+        align-items: center;   }
 
       #immagine {
         max-width: 100%;
@@ -86,7 +73,6 @@
       }
     </style>
   </head>
-
   <body>
     <div id="galleria">
       <button onclick="mostraImmagine(-1)">←</button>
@@ -95,7 +81,7 @@
     </div>
 
     <script>
-      let indiceImmagine = 2; // Indice dell'immagine attualmente visualizzata
+      let indiceImmagine = 1; 
       function mostraImmagine(cambio) {
         indiceImmagine += cambio;
         if (indiceImmagine < 14) {
@@ -104,12 +90,10 @@
         if (indiceImmagine > 14) {
           indiceImmagine = 15;
         }
-        document.getElementById("immagine").src = "immagine" + indiceImmagine + ".jpg";
-      }
+        document.getElementById("immagine").src = "immagine" + indiceImmagine + ".jpg";}
+      
     </script>
   </body>
-
-  </html>
 
   <footer class="footer">
     <div class="container">
