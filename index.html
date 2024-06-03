@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 <html lang="it">
 
-<!DOCTYPE html>
-<html lang="it">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Astra</title>
   <style>
-    body {
-      background-color: black;
-      color: white;
-      font-family: Arial, sans-serif; }
-
+    body { background-color: black; color: white;  font-family: Arial, sans-serif; }
     .container { max-width: 1200px; margin: 0 auto; padding: 20px;}
 
     .header { display: flex; justify-content: space-between; align-items: center;}
@@ -61,16 +54,9 @@
     </div>
 
     <script>
-      let indiceImmagine = 1; 
-      function mostraImmagine(cambio) {
-        indiceImmagine += cambio;
-        if (indiceImmagine < 14) {
-          indiceImmagine = 15; // Numero totale di immagini
-        }
-        if (indiceImmagine > 14) {
-          indiceImmagine = 15;
-        }
-        document.getElementById("immagine").src = "immagine" + indiceImmagine + ".jpg";}
+      let indiceImmagine = 1;
+      function mostraImmagine(cambio) { indiceImmagine += cambio; if (indiceImmagine < 14) { indiceImmagine = 15; // =15}
+        if (indiceImmagine > 14) {  indiceImmagine = 15; } document.getElementById("immagine").src = "immagine" + indiceImmagine + ".jpg";}
       
     </script>
   </body>
