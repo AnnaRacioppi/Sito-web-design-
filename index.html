@@ -6,15 +6,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sito Astra</title>
     <link rel="stylesheet" href="style.css">
-  
-  
+    <style>
+        body {
+            font-family: Bordoni;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        h2 {
+            color: black;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 300px;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #D2B48C;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #B8860B;
+        }
+
+        .pill-nav {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+            align-items: center; /* Per allineare il logo e il tasto ACCEDI */
+        }
+
+        .pill-nav a {
+            text-decoration: none;
+            color: black;
+            padding: 15px 20px;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .pill-nav a:hover {
+            background-color: #D2B48C;
+        }
+
+        .pill-nav a.active::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background-color: #D2B48C;
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        #home {
+            padding: 20px;
+            margin: 20px;
+            border: 2px solid #D2B48C;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .slideshow-container {
+            max-width: 100%;
+            margin: auto;
+        }
+
+        .mySlides img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .zone {
+            padding: 20px;
+            margin: 20px;
+            border: 2px solid #D2B48C;
+            text-align: center;
+        }
+
+        .accesso {
+            text-align: right; /* Allinea a destra */
+            margin-right: 20px; /* Margine per separare dal bordo */
+        }
+
+        .accesso input[type="submit"] {
+            margin-top: 0;
+        }
+    </style>
 </head>
-  
-<body>
-    <a href="pagina-accesso.html" class="accesso">
-      <button class="btn">ACCEDI</button>
-    </a>
-  </body>
 
 <body>
     <div class="primaparte" id="prima">
@@ -26,9 +121,14 @@
     <div class="container">
         <div class="pill-nav">
             <a class="active" href="#home">HOME</a>
-            <a href="#news">CHI SIAMO</a>
-            <a href="#contact">I NOSTRI PRODOTTI</a>
-            <a href="#about">LE PROMO</a>
+            <a href="#chi-siamo">CHI SIAMO</a>
+            <a href="#prodotti">I NOSTRI PRODOTTI</a>
+            <a href="#promo">LE PROMO</a>
+            <div class="accesso">
+                <a href="pagina-accesso.html">
+                    <input type="submit" value="ACCEDI"> <!-- Bottone ACCEDI -->
+                </a>
+            </div>
         </div>
     </div>
 
@@ -37,26 +137,22 @@
     <p>Se siete alla ricerca dell'arredamento perfetto, non dovete cercare oltre: su Astra troverete una vasta selezione di prodotti adattabili al vostro stile e alle vostre esigenze.</p>
     <p>Ciascun prodotto può essere personalizzato secondo i vostri gusti e realizzato con cura artigianale in Italia, garantendo così la massima qualità e durata nel tempo.</p>
 
-    <div id="carousel">
+    <div id="home">
         <h1 style="text-align: center;">DAI UN'IMPRONTA DI DESIGN ALLA TUA CASA CON I NOSTRI PRODOTTI</h1>
         <p>Non accontentatevi: scegliete Astra e rendete i vostri spazi unici e personalizzati.</p>
-
         <h1 style="text-align: center;">CLASSICITA', MODERNITA' O MINIMALISMO</h1>
 
         <div class="slideshow-container">
             <div class="mySlides fade">
-                <div class="numbertext">1 / 3</div>
-                <img src="img_nature_wide.jpg" style="width:100%" alt="Nature">
+                <img src="img_nature_wide.jpg" alt="Nature">
             </div>
 
             <div class="mySlides fade">
-                <div class="numbertext">2 / 3</div>
-                <img src="img_snow_wide.jpg" style="width:100%" alt="Snow">
+                <img src="img_snow_wide.jpg" alt="Snow">
             </div>
 
             <div class="mySlides fade">
-                <div class="numbertext">3 / 3</div>
-                <img src="img_mountains_wide.jpg" style="width:100%" alt="Mountains">
+                <img src="img_mountains_wide.jpg" alt="Mountains">
             </div>
 
             <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -78,7 +174,7 @@
         </div>
 
         <script>
-            let slideIndex = 1;
+            let slideIndex = 1; // Modificato per partire dalla prima slide
             showSlides(slideIndex);
 
             function plusSlides(n) {
@@ -93,20 +189,35 @@
                 let i;
                 let slides = document.getElementsByClassName("mySlides");
                 let dots = document.getElementsByClassName("dot");
-                
+
                 if (n > slides.length) { slideIndex = 1; }
                 if (n < 1) { slideIndex = slides.length; }
 
                 for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";  
+                    slides[i].style.display = "none";
                 }
                 for (i = 0; i < dots.length; i++) {
                     dots[i].className = dots[i].className.replace(" active", "");
                 }
-                slides[slideIndex - 1].style.display = "block";  
+                slides[slideIndex - 1].style.display = "block";
                 dots[slideIndex - 1].className += " active";
             }
         </script>
+    </div>
+
+    <div class="zone" id="chi-siamo">
+        <h2>CHI SIAMO</h2>
+        <p>"Astra nasce dall'idea di una giovane designer che collabora con artigiani esperti, valorizzando l'eccellenza del 'saper fare' italiano e l'attenzione per l'ambiente. Ci siamo dedicati con passione e creatività al design del prodotto, con l'obiettivo di trasformare idee in arredi unici e sostenibili. I nostri prodotti, marchiati Astra, nascono dall'incontro tra innovazione e tradizione, per dare vita a spazi che raccontano storie e rispettano il mondo che ci circonda. Astra è casa di ogni cittadino del mondo.</p>
+    </div>
+
+    <div class="zone" id="prodotti">
+        <h2>I NOSTRI PRODOTTI</h2>
+        <p>Visualizza la nostra gamma di prodotti.</p>
+    </div>
+
+    <div class="zone" id="promo">
+        <h2>LE PROMO</h2>
+        <p>Scopri le nostre promozioni attuali.</p>
     </div>
 
     <footer>
@@ -115,13 +226,13 @@
             <p>Rimani aggiornato su promozioni, offerte e novità di Astra!</p>
             <form action="/action_page.php">
                 <input type="text" placeholder="Nome" name="name" required>
+                <input type="text" placeholder="Cognome" name="surname" required>
                 <input type="email" placeholder="Email" name="mail" required>
                 <label>
                     <input type="checkbox" checked="checked" name="subscribe"> Daily Newsletter
                 </label>
-                <input type="submit" value="Iscriviti" style="background-color: #D2B48C">
+                <input type="submit" value="Iscriviti">
             </form>
-          
             <hr>
             <p>TERMINI & PRIVACY</p>
         </div>
@@ -130,3 +241,5 @@
 </body>
 
 </html>
+
+
