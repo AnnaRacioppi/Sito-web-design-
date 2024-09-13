@@ -1,14 +1,14 @@
 body {
     font-family: Bordoni;
-    margin: 0;
-    padding: 0;
+    margin: 10;
+    padding: 10;
     background-color: #f4f4f4;
 }
 
 header {
     background-color: #333;
     color: #fff;
-    padding: 10px 0;
+    padding: 10px 20px;
     text-align: center;
 }
 
@@ -23,7 +23,7 @@ nav a {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 800px;
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
@@ -69,18 +69,18 @@ footer {
 
 .btn {
     display: inline-block;
-    padding: 15px 19px;
-    background-color: #007bff; /* Usa il colore blu per i bottoni */
+    padding: 10px 25px;
+    background-color: #007bff; 
     color: #fff;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
 }
 
 .accesso {
     position: absolute;
-    top: 70px; 
-    right: 120px; 
+    top: -10px; 
+    right: -10px; 
     text-decoration: none;
 }
 
@@ -90,11 +90,12 @@ footer {
     text-align: center;
     padding: 14px;
     text-decoration: none;
-    font-size: 17px;
-    border-radius: 5px;
+    font-size: 20px;
+    border-radius: 12px;
 }
 
-.pill-nav a:hover {
+.pill-nav a 
+hover {
     background-color: #fff;
     color: black;
 }
@@ -175,7 +176,7 @@ p {
 }
 
 .slideshow-container {
-    max-width: 1000px;
+    max-width: 700px;
     position: relative;
     margin: auto;
 }
@@ -261,7 +262,7 @@ p {
 }
 
 .input-container {
-    display: flex; /* Rimosso il prefisso per IE */
+    display: flex; 
     width: 100%;
     margin-bottom: 15px;
 }
@@ -296,7 +297,6 @@ p {
 .btn:hover {
     opacity: 1;
 }
-
 form {
     border: 3px solid #f1f1f1;
     font-family: Bordoni;
@@ -328,48 +328,46 @@ input[type=submit]:hover {
 
 @keyframes fade {
     from {
-        opacity: 4;
+        opacity: 0;
     }
-  
+
     to {
         opacity: 1;
     }
 
-@media only screen and (max-width: 300px) {
+only screen and (max-width: 300px) { 
     .prev,
     .next,
     .text {
         font-size: 20px;
     }
+
+/* Aggiunto per uniformità */
+.pill-nav {
+    display: flex; /* Usa flexbox per layout flessibile */
+    justify-content: center; /* Centra gli elementi orizzontalmente */
 }
 
-   <script>
-            let slideIndex = 1;
-            showSlides(slideIndex);
+.pill-nav a {
+    display: flex; /* Assicura che le voci si comportino come elementi flessibili */
+    align-items: center; /* Allinea verticalmente il contenuto */
+    justify-content: center; /* Centro orizzontale */
+    color: black;
+    padding: 14px 20px; /* Aggiunto padding uniforme */
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 5px;
+    margin: 0 10px; /* Margine uniforme */
+    height: 50px; /* Altezza fissa per uniformità */
+    line-height: 50px; /* Allineamento verticale del testo */
+}
 
-            function plusSlides(n) {
-                showSlides(slideIndex += n);
-            }
+.pill-nav a:hover {
+    background-color: #fff;
+    color: black;
+}
 
-            function currentSlide(n) {
-                showSlides(slideIndex = n);
-            }
-
-            function showSlides(n) {
-                let i;
-                let slides = document.getElementsByClassName("mySlides");
-                let dots = document.getElementsByClassName("dot");
-                
-                if (n > slides.length) { slideIndex = 1; }
-                if (n < 1) { slideIndex = slides.length; }
-
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";  
-                }
-                for (i = 0; i < dots.length; i++) {
-                    dots[i].className = dots[i].className.replace(" active", "");
-                }
-                slides[slideIndex - 1].style.display = "block";  
-                dots[slideIndex - 1].className += " active";
-            }
-        </script>
+.pill-nav a.active {
+    background-color: #D2B48C;
+    color: black;
+}
