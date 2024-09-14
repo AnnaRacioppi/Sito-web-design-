@@ -48,7 +48,7 @@
             display: flex;
             justify-content: space-between;
             margin: 20px;
-            align-items: center; /* Per allineare il logo e il tasto ACCEDI */
+            align-items: center;
         }
 
         .pill-nav a {
@@ -101,12 +101,48 @@
         }
 
         .accesso {
-            text-align: right; /* Allinea a destra */
-            margin-right: 20px; /* Margine per separare dal bordo */
+            text-align: right; 
+            margin-right: 20px; 
         }
 
         .accesso input[type="submit"] {
             margin-top: 0;
+        }
+
+        /* Stile per i rettangoli delle immagini */
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .image-box {
+            width: 30%; /* Dimensione fissa del 30% */
+            position: relative;
+            text-align: center;
+            border: 2px solid #D2B48C;
+            border-radius: 10px;
+        }
+
+        .image-box img {
+            width: 100%;
+            border-radius: 10px 10px 0 0; /* Raggio angolo solo superiore */
+        }
+
+        .caption {
+            background-color: #fff;
+            border: 1px solid #D2B48C;
+            padding: 10px;
+            margin-top: -5px; /* Per sovrapporre leggermente all'immagine */
+            display: inline-block;
+        }
+
+        /* Stile per la linea beige */
+        .beige-line {
+            border: 0;
+            height: 1px;
+            background-color: #D2B48C; /* Colore beige */
+            margin: 20px 0; /* Spazio sopra e sotto */
         }
     </style>
 </head>
@@ -144,15 +180,15 @@
 
         <div class="slideshow-container">
             <div class="mySlides fade">
-                <img src="img_nature_wide.jpg" alt="Nature">
+                <img src="img_placeholder1.jpg" alt="Immagine 1">
             </div>
 
             <div class="mySlides fade">
-                <img src="img_snow_wide.jpg" alt="Snow">
+                <img src="img_placeholder2.jpg" alt="Immagine 2">
             </div>
 
             <div class="mySlides fade">
-                <img src="img_mountains_wide.jpg" alt="Mountains">
+                <img src="img_placeholder3.jpg" alt="Immagine 3">
             </div>
 
             <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -167,14 +203,42 @@
             <span class="dot" onclick="currentSlide(3)"></span>
         </div>
 
+        
+        <div class="social-container" style="text-align:center; margin-top: 20px;">
+            <div style="display: flex; justify-content: center; gap: 20px;">
+                <a href="https://www.instagram.com/tuo_account_instagram" class="custom-rectangle" target="_blank">I NOSTRI SOCIAL</a>
+                <a href="customization_page.html" class="custom-rectangle" target="_blank">PERSONALIZZA IL TUO PRODOTTO!</a>
+            </div>
+        </div>
+
+      
+        <hr class="beige-line">
+
         <div class="gallery">
             <div class="image" style="background-image: url('immagine1.jpg');"></div>
             <div class="image" style="background-image: url('immagine2.jpg');"></div>
             <div class="image" style="background-image: url('immagine3.jpg');"></div>
         </div>
 
+        <div class="zone" id="promo">
+        <h2>Per te</h2>
+        <div class="image-container">
+            <div class="image-box">
+                <img src="immagine1.jpg" alt="Immagine 1">
+                <div class="caption">Immagine</div>
+            </div>
+            <div class="image-box">
+                <img src="immagine2.jpg" alt="Immagine 2">
+                <div class="caption">Immagine</div>
+            </div>
+            <div class="image-box">
+                <img src="immagine3.jpg" alt="Immagine 3">
+                <div class="caption">Immagine</div>
+            </div>
+        </div>
+
         <script>
-            let slideIndex = 1; // Modificato per partire dalla prima slide
+            let slideIndex = 1;
             showSlides(slideIndex);
 
             function plusSlides(n) {
@@ -207,17 +271,48 @@
 
     <div class="zone" id="chi-siamo">
         <h2>CHI SIAMO</h2>
-        <p>"Astra nasce dall'idea di una giovane designer che collabora con artigiani esperti, valorizzando l'eccellenza del 'saper fare' italiano e l'attenzione per l'ambiente. Ci siamo dedicati con passione e creatività al design del prodotto, con l'obiettivo di trasformare idee in arredi unici e sostenibili. I nostri prodotti, marchiati Astra, nascono dall'incontro tra innovazione e tradizione, per dare vita a spazi che raccontano storie e rispettano il mondo che ci circonda. Astra è casa di ogni cittadino del mondo.</p>
+    <p> "Astra nasce dall'idea di una giovane designer che collabora con artigiani esperti, valorizzando l'eccellenza del 'saper fare' italiano e l'attenzione per l'ambiente. Ci siamo dedicati con passione e creatività al design del prodotto, con l'obiettivo di trasformare idee in arredi unici e sostenibili. I nostri prodotti, marchiati Astra, nascono dall'incontro tra innovazione e tradizione, per dare vita a spazi che raccontano storie e rispettano il mondo che ci circonda. Astra è casa di ogni cittadino del mondo.""</p>
+</div>
     </div>
 
     <div class="zone" id="prodotti">
         <h2>I NOSTRI PRODOTTI</h2>
-        <p>Visualizza la nostra gamma di prodotti.</p>
+        <p>Scoprite la nostra esclusiva collezione di prodotti design, pensati per arricchire ogni angolo della vostra casa. Dall'arredamento della zona giorno alla funzionalità della cucina e all'eleganza del bagno, ogni articolo è realizzato con materiali di ottima qualità, garantendo durabilità e stile a un costo ridotto rispetto ad altri marchi. <br><br>
+
+Arredamento per la tua casa: Offriamo una vasta gamma di mobili per ogni spazio abitativo. Dalle raffinate soluzioni per la sala da pranzo, che uniscono comfort ed estetica, ai pratici armadietti per la cucina, ogni pezzo è realizzato con cura e attenzione ai dettagli. Ogni prodotto è progettato per rispondere alle vostre esigenze di funzionalità senza compromettere il design. <br><br>
+
+Oggettistica per abbellire gli spazi: Non ci fermiamo solo all’arredamento! La nostra selezione di oggettistica offre una varietà di elementi decorativi in grado di personalizzare e dare vita ai vostri ambienti. Dai vasi artisticamente lavorati a lampade dal design unico, ogni articolo è pensato per aggiungere un tocco di classe e raffinatezza alla vostra casa. <br><br>
+
+Produzione industriale di qualità: La nostra linea di produzione industriale garantisce standard elevati, mantenendo prezzi competitivi. Collaboriamo con fornitori selezionati e utilizziamo materiali sostenibili, per offrire prodotti che non solo parlano di estetica, ma anche di responsabilità ambientale. <br><br>
+
+Scegli il meglio per la tua casa: Con noi, ogni acquisto diventa un investimento nel comfort e nel benessere. Scoprite la convenienza di prodotti dal design curato, pensati per durare e valorizzare il vostro spazio. Esplora la nostra collezione e lascia che la tua casa parli di te!...</p>
     </div>
 
     <div class="zone" id="promo">
         <h2>LE PROMO</h2>
-        <p>Scopri le nostre promozioni attuali.</p>
+        <div  id="promo">
+<p>Hai un’idea brillante per un prodotto ma non sai da dove cominciare? Questa settimana, abbiamo la soluzione perfetta per te! Approfitta della nostra Offerta Esclusiva con uno sconto del 30% su tutti i pacchetti di design del prodotto!<br><br>
+
+🛠️ Cosa Offriamo:<br><br>
+
+Progettazione personalizzata di prodotti<br>
+Prototipazione rapida<br>
+Assistenza nella scelta dei materiali<br>
+Revisione illimitata fino alla tua completa soddisfazione<br><br>
+
+🎨 Perché Sceglierci?<br><br>
+
+Il nostro team di designer esperti è dedicato a trasformare le tue idee in realtà.<br>
+Utilizziamo le ultime tecnologie per garantire risultati di alta qualità.<br>
+Collaboriamo con te in ogni fase del processo, assicurandoci che il prodotto finale rispecchi esattamente la tua visione.<br><br>
+      
+⏰ Affrettati! La promozione è valida solo fino a domenica. Non perdere l'occasione di portare il tuo progetto al livello successivo a un prezzo imbattibile!<br><br>
+
+✨ Come Partecipare: Visita i nostri social, scegli il pacchetto più adatto alle tue esigenze e utilizza il codice DESIGN30 al momento del pagamento.<br><br>
+
+👉 Contattaci per una consulenza gratuita! Siamo qui per aiutarti a dare vita alle tue idee. Non aspettare, il tuo prodotto innovativo ti aspetta!<br><br>
+
+Asta – Dove la tua immaginazione diventa realtà!.</p>
     </div>
 
     <footer>
@@ -241,5 +336,4 @@
 </body>
 
 </html>
-
 
