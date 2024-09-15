@@ -143,8 +143,8 @@ footer {
 
 .accesso {
     position: absolute;
-    top: 60px; 
-    right: 5px; 
+    top: 100px; 
+    right: 0px; 
     text-decoration: none;
 }
 
@@ -208,8 +208,8 @@ p {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     background: beige;
     color: #D2B48C;
     text-align: center;
