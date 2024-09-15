@@ -2,20 +2,27 @@
 <html lang="it">
 
 <head>
+  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sito Astra</title>
     <link rel="stylesheet" href="style.css">
+  
+  <body>
+    <header>
+        <h1>ASTRA</h1>
+    </header>
     <style>
-        body {
-            font-family: Bordoni;
-        }
-
-        footer {
-            text-align: center;
-            background-color: #f2f2f2;
-            padding: 20px;
-        }
+       <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Chi Siamo</a></li>
+            <li><a href="#services">Servizi</a></li>
+            <li><a href="#contact">Contatti</a></li>
+        </ul>
+    </nav>
+       
+  
 
         h2 {
             color: black;
@@ -109,7 +116,7 @@
             margin-top: 0;
         }
 
-        /* Stile per i rettangoli delle immagini */
+      
         .image-container {
             display: flex;
             justify-content: space-around;
@@ -117,33 +124,27 @@
         }
 
         .image-box {
-            width: 30%; /* Dimensione fissa del 30% */
-            position: relative;
-            text-align: center;
-            border: 2px solid #D2B48C;
-            border-radius: 10px;
-        }
+    width: 30%;
+    position: relative;
+    text-align: center;
+    border: 2px solid #D2B48C;
+    border-radius: 20px; 
+    padding: 10px; 
+    margin: 15px; 
+    transition: transform 0.3s, box-shadow 0.3s; 
+}
 
-        .image-box img {
-            width: 100%;
-            border-radius: 10px 10px 0 0; /* Raggio angolo solo superiore */
-        }
-
+.image-box:hover {
+    transform: translateY(-5px); 
+    box-shadow: 2 8px 16px rgba(0, 0, 0, 0.2); 
         .caption {
             background-color: #fff;
             border: 1px solid #D2B48C;
             padding: 10px;
-            margin-top: -5px; /* Per sovrapporre leggermente all'immagine */
+            margin-top: 200px; 
             display: inline-block;
         }
 
-        /* Stile per la linea beige */
-        .beige-line {
-            border: 0;
-            height: 1px;
-            background-color: #D2B48C; /* Colore beige */
-            margin: 20px 0; /* Spazio sopra e sotto */
-        }
     </style>
 </head>
 
@@ -159,10 +160,11 @@
             <a class="active" href="#home">HOME</a>
             <a href="#chi-siamo">CHI SIAMO</a>
             <a href="#prodotti">I NOSTRI PRODOTTI</a>
-            <a href="#promo">LE PROMO</a>
+            <a href="#promo">SCOPRI</a>
             <div class="accesso">
                 <a href="pagina-accesso.html">
-                    <input type="submit" value="ACCEDI"> <!-- Bottone ACCEDI -->
+                    <input type="submit" value="ACCEDI">
+                  
                 </a>
             </div>
         </div>
@@ -180,15 +182,15 @@
 
         <div class="slideshow-container">
             <div class="mySlides fade">
-                <img src="img_placeholder1.jpg" alt="Immagine 1">
+                <img src="img_placeholder1.jpg">
             </div>
 
             <div class="mySlides fade">
-                <img src="img_placeholder2.jpg" alt="Immagine 2">
+                <img src="img_placeholder2.jpg">
             </div>
 
             <div class="mySlides fade">
-                <img src="img_placeholder3.jpg" alt="Immagine 3">
+                <img src="img_placeholder3.jpg">
             </div>
 
             <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -204,13 +206,12 @@
         </div>
 
         
-        <div class="social-container" style="text-align:center; margin-top: 20px;">
+        <div class="social-container" style="text-align:center; margin-top: 30px;">
             <div style="display: flex; justify-content: center; gap: 20px;">
-                <a href="https://www.instagram.com/tuo_account_instagram" class="custom-rectangle" target="_blank">I NOSTRI SOCIAL</a>
+                <a href="https://www.instagram.com/tuo_account_instagram" class="custom-rectangle" target="_blank">SEGUICI SULLA NOSTRA PAGINA SOCIAL!</a>
                 <a href="customization_page.html" class="custom-rectangle" target="_blank">PERSONALIZZA IL TUO PRODOTTO!</a>
             </div>
         </div>
-
       
         <hr class="beige-line">
 
@@ -221,19 +222,19 @@
         </div>
 
         <div class="zone" id="promo">
-        <h2>Per te</h2>
+        <h2>SCOPRI IL MEGLIO PER TE</h2>
         <div class="image-container">
             <div class="image-box">
-                <img src="immagine1.jpg" alt="Immagine 1">
-                <div class="caption">Immagine</div>
+                <img src="immagine1.jpg">
+                <div class="caption">ARREDAMENTO</div>
             </div>
             <div class="image-box">
-                <img src="immagine2.jpg" alt="Immagine 2">
-                <div class="caption">Immagine</div>
+                <img src="immagine2.jpg">
+                <div class="caption">BAGNO</div>
             </div>
             <div class="image-box">
-                <img src="immagine3.jpg" alt="Immagine 3">
-                <div class="caption">Immagine</div>
+                <img src="immagine3.jpg">
+                <div class="caption">OGGETTISTICA</div>
             </div>
         </div>
 
@@ -317,8 +318,10 @@ Asta – Dove la tua immaginazione diventa realtà!.</p>
 
     <footer>
         <div class="container">
-            <h2>Iscriviti alla nostra Newsletter</h2>
-            <p>Rimani aggiornato su promozioni, offerte e novità di Astra!</p>
+            <h2>ISCRIVITI ALLA NOSTRA NEWSLETTER
+           <p>resta aggiornato su promozioni, offerte e novità di Astra!</p>
+              </h2>
+           
             <form action="/action_page.php">
                 <input type="text" placeholder="Nome" name="name" required>
                 <input type="text" placeholder="Cognome" name="surname" required>
@@ -336,4 +339,3 @@ Asta – Dove la tua immaginazione diventa realtà!.</p>
 </body>
 
 </html>
-
