@@ -1,28 +1,24 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
-  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sito Astra</title>
     <link rel="stylesheet" href="style.css">
-  
-  <body>
-    <header>
-        <h1>ASTRA</h1>
-    </header>
     <style>
-       <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">Chi Siamo</a></li>
-            <li><a href="#services">Servizi</a></li>
-            <li><a href="#contact">Contatti</a></li>
-        </ul>
-    </nav>
-       
-  
+        nav {
+            margin: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
 
         h2 {
             color: black;
@@ -107,27 +103,62 @@
             text-align: center;
         }
 
-        
-
         .image-container {
             display: flex;
             justify-content: space-around;
-            margin: 20px 10;
+            margin: 20px 0;
         }
 
-       
+        .image-box {
+            position: relative;
+            width: 30%; /* Assicura che ci siano tre immagini affiancate */
+            border-radius: 10px;
+            overflow: hidden; /* Nasconde tutto ciò che esce dal container */
+        }
+
+        .image-box img {
+            width: 100%; /* Riempie l'intero box avendo come riferimento la larghezza */
+            height: auto; /* Mantiene le proporzioni dell'immagine */
+            display: block; /* Rimuove gli spazi indesiderati */
+        }
+
         .caption {
             background-color: #fff;
             border: 1px solid #D2B48C;
             padding: 10px;
-            margin-top: 200px; 
+            margin-top: -50px; /* Solleva la caption sopra l'immagine */
             display: inline-block;
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            text-align: center;
         }
 
+        .social-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .custom-rectangle {
+            padding: 10px 20px;
+            background-color: #D2B48C;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .custom-rectangle:hover {
+            background-color: #B8860B;
+        }
     </style>
 </head>
-
 <body>
+    <header>
+        <h1>ASTRA</h1>
+    </header>
+    
     <div class="primaparte" id="prima">
         <a href="index.html" class="logo">
             <img src="logo.png" alt="Logo Astra">
@@ -143,7 +174,6 @@
             <div class="accesso">
                 <a href="pagina-accesso.html">
                     <input type="submit" value="ACCEDI">
-                  
                 </a>
             </div>
         </div>
@@ -184,8 +214,7 @@
             <span class="dot" onclick="currentSlide(3)"></span>
         </div>
 
-        
-        <div class="social-container" style="text-align:center; margin-top: 30px;">
+        <div class="social-container">
             <div style="display: flex; justify-content: center; gap: 20px;">
                 <a href="https://www.instagram.com/tuo_account_instagram" class="custom-rectangle" target="_blank">SEGUICI SULLA NOSTRA PAGINA SOCIAL!</a>
                 <a href="customization_page.html" class="custom-rectangle" target="_blank">PERSONALIZZA IL TUO PRODOTTO!</a>
@@ -195,112 +224,98 @@
         <hr class="beige-line">
 
         <div class="gallery">
-            <div class="image" style="background-image: url('lavandino.png');"></div>
+            <div class="image" style="background-image: url('bagno.png');"></div>
+            <div class="image" style="background-image: url('divano patrizia.png');"></div>
             <div class="image" style="background-image: url('tavolino.png');"></div>
-            <div class="image" style="background-image: url('divanodoppio.png');"></div>
         </div>
 
         <div class="zone" id="promo">
-        <h2>SCOPRI IL MEGLIO PER TE</h2>
-        <div class="image-container">
-            <div class="image-box">
-                <img src="divano patrizia.png">
-                <div class="caption">ARREDAMENTO</div>
+            <h2>SCOPRI IL MEGLIO PER TE</h2>
+            <div class="image-container">
+                <div class="image-box">
+                    <img src="divanodoppio.png">
+                    <div class="caption">ARREDAMENTO</div>
+                </div>
+                <div class="image-box">
+                    <img src="lavandino.png">
+                    <div class="caption">BAGNO</div>
+                </div>
+                <div class="image-box">
+                    <img src="mouse.png">
+                    <div class="caption">OGGETTISTICA</div>
+                </div>
             </div>
-            <div class="image-box">
-                <img src="bagno.png">
-                <div class="caption">BAGNO</div>
-            </div>
-            <div class="image-box">
-                <img src="mouse.png">
-                <div class="caption">OGGETTISTICA</div>
-            </div>
+
+            <script>
+                let slideIndex = 1;
+                showSlides(slideIndex);
+
+                function plusSlides(n) {
+                    showSlides(slideIndex += n);
+                }
+
+                function currentSlide(n) {
+                    showSlides(slideIndex = n);
+                }
+
+                function showSlides(n) {
+                    let i;
+                    let slides = document.getElementsByClassName("mySlides");
+                    let dots = document.getElementsByClassName("dot");
+
+                    if (n > slides.length) { slideIndex = 1; }
+                    if (n < 1) { slideIndex = slides.length; }
+
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                    }
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
+                    slides[slideIndex - 1].style.display = "block";
+                    dots[slideIndex - 1].className += " active";
+                }
+            </script>
         </div>
 
-        <script>
-            let slideIndex = 1;
-            showSlides(slideIndex);
-
-            function plusSlides(n) {
-                showSlides(slideIndex += n);
-            }
-
-            function currentSlide(n) {
-                showSlides(slideIndex = n);
-            }
-
-            function showSlides(n) {
-                let i;
-                let slides = document.getElementsByClassName("mySlides");
-                let dots = document.getElementsByClassName("dot");
-
-                if (n > slides.length) { slideIndex = 1; }
-                if (n < 1) { slideIndex = slides.length; }
-
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                for (i = 0; i < dots.length; i++) {
-                    dots[i].className = dots[i].className.replace(" active", "");
-                }
-                slides[slideIndex - 1].style.display = "block";
-                dots[slideIndex - 1].className += " active";
-            }
-        </script>
-    </div>
-
-    <div class="zone" id="chi-siamo">
-        <h2>CHI SIAMO</h2>
-    <p> "Astra nasce dall'idea di una giovane designer che collabora con artigiani esperti, valorizzando l'eccellenza del 'saper fare' italiano e l'attenzione per l'ambiente. Ci siamo dedicati con passione e creatività al design del prodotto, con l'obiettivo di trasformare idee in arredi unici e sostenibili. I nostri prodotti, marchiati Astra, nascono dall'incontro tra innovazione e tradizione, per dare vita a spazi che raccontano storie e rispettano il mondo che ci circonda. Astra è casa di ogni cittadino del mondo.""</p>
-</div>
+        <div class="zone" id="chi-siamo">
+            <h2>CHI SIAMO</h2>
+            <p>"Astra nasce dall'idea di una giovane designer che collabora con artigiani esperti, valorizzando l'eccellenza del 'saper fare' italiano e l'attenzione per l'ambiente. Ci siamo dedicati con passione e creatività al design del prodotto, con l'obiettivo di trasformare idee in arredi unici e sostenibili. I nostri prodotti, marchiati Astra, nascono dall'incontro tra innovazione e tradizione, per dare vita a spazi che raccontano storie e rispettano il mondo che ci circonda. Astra è casa di ogni cittadino del mondo."</p>
+        </div>
     </div>
 
     <div class="zone" id="prodotti">
         <h2>I NOSTRI PRODOTTI</h2>
         <p>Scoprite la nostra esclusiva collezione di prodotti design, pensati per arricchire ogni angolo della vostra casa. Dall'arredamento della zona giorno alla funzionalità della cucina e all'eleganza del bagno, ogni articolo è realizzato con materiali di ottima qualità, garantendo durabilità e stile a un costo ridotto rispetto ad altri marchi. <br><br>
-
-Arredamento per la tua casa: Offriamo una vasta gamma di mobili per ogni spazio abitativo. Dalle raffinate soluzioni per la sala da pranzo, che uniscono comfort ed estetica, ai pratici armadietti per la cucina, ogni pezzo è realizzato con cura e attenzione ai dettagli. Ogni prodotto è progettato per rispondere alle vostre esigenze di funzionalità senza compromettere il design. <br><br>
-
-Oggettistica per abbellire gli spazi: Non ci fermiamo solo all’arredamento! La nostra selezione di oggettistica offre una varietà di elementi decorativi in grado di personalizzare e dare vita ai vostri ambienti. Dai vasi artisticamente lavorati a lampade dal design unico, ogni articolo è pensato per aggiungere un tocco di classe e raffinatezza alla vostra casa. <br><br>
-
-Produzione industriale di qualità: La nostra linea di produzione industriale garantisce standard elevati, mantenendo prezzi competitivi. Collaboriamo con fornitori selezionati e utilizziamo materiali sostenibili, per offrire prodotti che non solo parlano di estetica, ma anche di responsabilità ambientale. <br><br>
-
-Scegli il meglio per la tua casa: Con noi, ogni acquisto diventa un investimento nel comfort e nel benessere. Scoprite la convenienza di prodotti dal design curato, pensati per durare e valorizzare il vostro spazio. Esplora la nostra collezione e lascia che la tua casa parli di te!...</p>
+        Arredamento per la tua casa: Offriamo una vasta gamma di mobili per ogni spazio abitativo. Dalle raffinate soluzioni per la sala da pranzo, che uniscono comfort ed estetica, ai pratici armadietti per la cucina, ogni pezzo è realizzato con cura e attenzione ai dettagli. Ogni prodotto è progettato per rispondere alle vostre esigenze di funzionalità senza compromettere il design. <br><br>
+        Oggettistica per abbellire gli spazi: Non ci fermiamo solo all’arredamento! La nostra selezione di oggettistica offre una varietà di elementi decorativi in grado di personalizzare e dare vita ai vostri ambienti. Dai vasi artisticamente lavorati a lampade dal design unico, ogni articolo è pensato per aggiungere un tocco di classe e raffinatezza alla vostra casa. <br><br>
+        Produzione industriale di qualità: La nostra linea di produzione industriale garantisce standard elevati, mantenendo prezzi competitivi. Collaboriamo con fornitori selezionati e utilizziamo materiali sostenibili, per offrire prodotti che non solo parlano di estetica, ma anche di responsabilità ambientale. <br><br>
+        Scegli il meglio per la tua casa: Con noi, ogni acquisto diventa un investimento nel comfort e nel benessere. Scoprite la convenienza di prodotti dal design curato, pensati per durare e valorizzare il vostro spazio. Esplora la nostra collezione e lascia che la tua casa parli di te!</p>
     </div>
 
     <div class="zone" id="promo">
         <h2>LE PROMO</h2>
-        <div  id="promo">
-<p>Hai un’idea brillante per un prodotto ma non sai da dove cominciare? Questa settimana, abbiamo la soluzione perfetta per te! Approfitta della nostra Offerta Esclusiva con uno sconto del 30% su tutti i pacchetti di design del prodotto!<br><br>
-
-🛠️ Cosa Offriamo:<br><br>
-
-Progettazione personalizzata di prodotti<br>
-Prototipazione rapida<br>
-Assistenza nella scelta dei materiali<br>
-Revisione illimitata fino alla tua completa soddisfazione<br><br>
-
-🎨 Perché Sceglierci?<br><br>
-
-Il nostro team di designer esperti è dedicato a trasformare le tue idee in realtà.<br>
-Utilizziamo le ultime tecnologie per garantire risultati di alta qualità.<br>
-Collaboriamo con te in ogni fase del processo, assicurandoci che il prodotto finale rispecchi esattamente la tua visione.<br><br>
-      
-⏰ Affrettati! La promozione è valida solo fino a domenica. Non perdere l'occasione di portare il tuo progetto al livello successivo a un prezzo imbattibile!<br><br>
-
-✨ Come Partecipare: Visita i nostri social, scegli il pacchetto più adatto alle tue esigenze e utilizza il codice DESIGN30 al momento del pagamento.<br><br>
-
-👉 Contattaci per una consulenza gratuita! Siamo qui per aiutarti a dare vita alle tue idee. Non aspettare, il tuo prodotto innovativo ti aspetta!<br><br>
-
-Asta – Dove la tua immaginazione diventa realtà!.</p>
+        <p>Hai un’idea brillante per un prodotto ma non sai da dove cominciare? Questa settimana, abbiamo la soluzione perfetta per te! Approfitta della nostra Offerta Esclusiva con uno sconto del 30% su tutti i pacchetti di design del prodotto!<br><br>
+        🛠️ Cosa Offriamo:<br><br>
+        Progettazione personalizzata di prodotti<br>
+        Prototipazione rapida<br>
+        Assistenza nella scelta dei materiali<br>
+        Revisione illimitata fino alla tua completa soddisfazione<br><br>
+        🎨 Perché Sceglierci?<br><br>
+        Il nostro team di designer esperti è dedicato a trasformare le tue idee in realtà.<br>
+        Utilizziamo le ultime tecnologie per garantire risultati di alta qualità.<br>
+        Collaboriamo con te in ogni fase del processo, assicurandoci che il prodotto finale rispecchi esattamente la tua visione.<br><br>
+        ⏰ Affrettati! La promozione è valida solo fino a domenica. Non perdere l'occasione di portare il tuo progetto al livello successivo a un prezzo imbattibile!<br><br>
+        ✨ Come Partecipare: Visita i nostri social, scegli il pacchetto più adatto alle tue esigenze e utilizza il codice DESIGN30 al momento del pagamento.<br><br>
+        👉 Contattaci per una consulenza gratuita! Siamo qui per aiutarti a dare vita alle tue idee. Non aspettare, il tuo prodotto innovativo ti aspetta!<br><br>
+        Astra – Dove la tua immaginazione diventa realtà!</p>
     </div>
 
     <footer>
         <div class="container">
-            <h2>ISCRIVITI ALLA NOSTRA NEWSLETTER
-           <p>resta aggiornato su promozioni, offerte e novità di Astra!</p>
-              </h2>
-           
+          
+            <h2>ISCRIVITI ALLA NOSTRA NEWSLETTER</h2>
+            <p>Restate aggiornati su promozioni, offerte e novità di Astra!</p>
             <form action="/action_page.php">
                 <input type="text" placeholder="Nome" name="name" required>
                 <input type="text" placeholder="Cognome" name="surname" required>
@@ -316,5 +331,4 @@ Asta – Dove la tua immaginazione diventa realtà!.</p>
         <p>&copy; 2024 Astra. Tutti i diritti riservati.</p>
     </footer>
 </body>
-
 </html>
