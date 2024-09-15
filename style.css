@@ -52,8 +52,9 @@ header {
 
 
 .logo {
-    max-width: auto; 
-    height: auto; 
+    max-width: 100px; 
+    height: auto;
+  
 }
 
 
@@ -197,10 +198,8 @@ p {
 }
 
 #carousel img {
-    width: 100vw;
-    height: 400px;
-    position: absolute;
-    transition: transform 0.5s;
+    max-width: 100%; /* Assicurati che le immagini nel carosello siano sempre contenute */
+    height: auto;    /* Mantieni l'aspect ratio */
 }
 
 #carousel #prev,
@@ -226,7 +225,7 @@ p {
 }
 
   .image-box {
-    width: 30%;
+     width: calc(33.33% - 30px);
     position: relative;
     text-align: center;
     border: 2px solid #D2B48C;
@@ -235,6 +234,7 @@ p {
     margin: 15px; 
     transition: transform 0.3s, box-shadow 0.3s; 
 }
+ 
 
 #subtitle {
     position: absolute;
@@ -472,13 +472,17 @@ input[type=submit]:hover {
     }
 }
 
-@media only screen and (max-width: 300px) { 
-    .prev,
+ 
+   
+
+  @media only screen and (max-width: 600px) {
+    .image-box {
+        width: calc(100% - 30px) .prev,
     .next,
     .text {
         font-size: 20px;
+  
     }
-}
 
 
 .pill-nav {
