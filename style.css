@@ -225,7 +225,7 @@ p {
     right: 10px; 
 }
 
-  .image-box {
+ .image-box {
     width: 30%;
     position: relative;
     text-align: center;
@@ -236,14 +236,6 @@ p {
     transition: transform 0.3s, box-shadow 0.3s; 
 }
 
-.image-box:hover {
-    transform: translateY(-5px); 
-    box-shadow: 2 8px 16px rgba(0, 0, 0, 0.2); 
-  
-     .caption {
-            background-color: #fff;
-            border: 1px solid 
-  
 #subtitle {
     position: absolute;
     top: 50%;
