@@ -224,22 +224,32 @@ p {
     right: 10px; 
 }
 
-.image-box {
-    width: 300px; /* Imposta una larghezza fissa */
-    height: 200px; /* Imposta un'altezza fissa */
-    overflow: hidden; /* Nasconde eventuali parti delle immagini che escono dal riquadro */
-    position: relative; /* Necessario per posizionare la caption in modo corretto */
-}
 
-.image-box img {
-    width: 100%; /* Imposta la larghezza al 100% del riquadro */
-    height: auto; /* Mantiene le proporzioni originali dell'immagine */
-    position: absolute; /* Posiziona l'immagine all'interno del riquadro */
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); /* Centra l'immagine */
-}
- 
+    .image-container {
+        display: flex; /* Utilizzare Flexbox per allineare le immagini orizzontalmente */
+        justify-content: center; /* Centrare le immagini */
+        gap: 20px; /* Distanza tra le immagini */
+        padding: 20px; /* Padding per il contenitore */
+    }
+
+    .image-box {
+        text-align: center; /* Centrare il testo sotto ogni immagine */
+    }
+
+    .image-box img {
+        max-width: 200px; /* Imposta la larghezza massima per le immagini */
+        height: auto; /* Mantieni le proporzioni */
+    }
+
+    .caption {
+        background-color: #fff;
+        border: 1px solid #D2B48C;
+        padding: 10px;
+        margin-top: 10px; /* Riduci la distanza sotto le immagini */
+        display: inline-block;
+    }
+
+
 
 #subtitle {
     position: absolute;
