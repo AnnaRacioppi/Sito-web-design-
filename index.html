@@ -6,6 +6,7 @@
     <title>Sito Astra</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Stile esistente */
         nav {
             margin: 20px;
         }
@@ -103,55 +104,23 @@
             text-align: center;
         }
 
+        
+
         .image-container {
             display: flex;
             justify-content: space-around;
-            margin: 20px 0;
+            margin: 20px 10;
         }
 
-        .image-box {
-            position: relative;
-            width: 30%; /* Assicura che ci siano tre immagini affiancate */
-            border-radius: 10px;
-            overflow: hidden; /* Nasconde tutto ciò che esce dal container */
-        }
-
-        .image-box img {
-            width: 100%; /* Riempie l'intero box avendo come riferimento la larghezza */
-            height: auto; /* Mantiene le proporzioni dell'immagine */
-            display: block; /* Rimuove gli spazi indesiderati */
-        }
-
+       
         .caption {
             background-color: #fff;
             border: 1px solid #D2B48C;
             padding: 10px;
-            margin-top: -50px; /* Solleva la caption sopra l'immagine */
+            margin-top: 200px; 
             display: inline-block;
-            position: absolute;
-            bottom: 10px;
-            left: 0;
-            right: 0;
-            text-align: center;
         }
 
-        .social-container {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .custom-rectangle {
-            padding: 10px 20px;
-            background-color: #D2B48C;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .custom-rectangle:hover {
-            background-color: #B8860B;
-        }
     </style>
 </head>
 <body>
@@ -191,15 +160,19 @@
 
         <div class="slideshow-container">
             <div class="mySlides fade">
-                <img src="img_placeholder1.jpg">
+                <img src="img_placeholder1.jpg" alt="Immagine 1">
             </div>
 
             <div class="mySlides fade">
-                <img src="img_placeholder2.jpg">
+                <img src="img_placeholder2.jpg" alt="Immagine 2">
             </div>
 
             <div class="mySlides fade">
-                <img src="img_placeholder3.jpg">
+                <img src="img_placeholder3.jpg" alt="Immagine 3">
+            </div>
+            
+            <div class="mySlides fade">
+                <img src="img_placeholder4.jpg" alt="Immagine 4">
             </div>
 
             <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -212,6 +185,7 @@
             <span class="dot" onclick="currentSlide(1)"></span>
             <span class="dot" onclick="currentSlide(2)"></span>
             <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
         </div>
 
         <div class="social-container">
@@ -233,15 +207,15 @@
             <h2>SCOPRI IL MEGLIO PER TE</h2>
             <div class="image-container">
                 <div class="image-box">
-                    <img src="divanodoppio.png">
+                    <img src="divanodoppio.png" alt="Divano Doppio">
                     <div class="caption">ARREDAMENTO</div>
                 </div>
                 <div class="image-box">
-                    <img src="lavandino.png">
+                    <img src="lavandino.png" alt="Lavandino">
                     <div class="caption">BAGNO</div>
                 </div>
                 <div class="image-box">
-                    <img src="mouse.png">
+                    <img src="mouse.png" alt="Oggettistica">
                     <div class="caption">OGGETTISTICA</div>
                 </div>
             </div>
@@ -280,7 +254,7 @@
 
         <div class="zone" id="chi-siamo">
             <h2>CHI SIAMO</h2>
-            <p>"Astra nasce dall'idea di una giovane designer che collabora con artigiani esperti, valorizzando l'eccellenza del 'saper fare' italiano e l'attenzione per l'ambiente. Ci siamo dedicati con passione e creatività al design del prodotto, con l'obiettivo di trasformare idee in arredi unici e sostenibili. I nostri prodotti, marchiati Astra, nascono dall'incontro tra innovazione e tradizione, per dare vita a spazi che raccontano storie e rispettano il mondo che ci circonda. Astra è casa di ogni cittadino del mondo."</p>
+            <p>"Astra nasce dall'idea di una giovane desig designer che collabora con artigiani esperti, valorizzando l'eccellenza del 'saper fare' italiano e l'attenzione per l'ambiente. Ci siamo dedicati con passione e creatività al design del prodotto, con l'obiettivo di trasformare idee in arredi unici e sostenibili. I nostri prodotti, marchiati Astra, nascono dall'incontro tra innovazione e tradizione, per dare vita a spazi che raccontano storie e rispettano il mondo che ci circonda. Astra è casa di ogni cittadino del mondo."</p>
         </div>
     </div>
 
