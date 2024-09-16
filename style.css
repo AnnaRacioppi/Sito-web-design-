@@ -306,7 +306,7 @@ p {
 }
 
 .custom-rectangle:hover {
-    background-color: #D2B48C; 
+    background-color: #333; 
   height: 20px;
     color: white; 
     transform: scale(1.02); 
@@ -315,6 +315,8 @@ p {
 
 .class {
    height: 20px;
+  
+
   
 .prev
 .next {
