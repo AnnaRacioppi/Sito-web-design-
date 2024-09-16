@@ -104,20 +104,29 @@
             text-align: center;
         }
 
-        
-
         .image-container {
             display: flex;
             justify-content: space-around;
-            margin: 20px 10;
+            margin: 0; /* Rimosso il margine */
+            padding: 20px 0; /* Padding per distanziare dalla linea beige */
         }
 
-       
+        .image-box {
+            flex: 1; /* Permette a tutti gli elementi di occupare spazio uguale */
+            text-align: center; /* Centra il testo */
+        }
+
+        .image-box img {
+            width: 100%; /* Immagini a piena larghezza del box */
+            max-width: 200px; /* Larghezza massima delle immagini */
+            border-radius: 10px; /* Angoli arrotondati per le immagini */
+        }
+
         .caption {
             background-color: #fff;
             border: 1px solid #D2B48C;
             padding: 10px;
-            margin-top: 200px; 
+            margin-top: 10px; /* Margine superiore per la distanza dal testo */
             display: inline-block;
         }
 
@@ -160,19 +169,19 @@
 
         <div class="slideshow-container">
             <div class="mySlides fade">
-                <img src="bagno.png" alt="Immagine 1">
+                <img src="img_placeholder1.jpg" alt="Immagine 1">
             </div>
 
             <div class="mySlides fade">
-                <img src="divano patrizia.png" alt="Immagine 2">
+                <img src="img_placeholder2.jpg" alt="Immagine 2">
             </div>
 
             <div class="mySlides fade">
-                <img src="divanodoppio.png" alt="Immagine 3">
+                <img src="img_placeholder3.jpg" alt="Immagine 3">
             </div>
             
             <div class="mySlides fade">
-                <img src="tavolino.png" alt="Immagine 4">
+                <img src="img_placeholder4.jpg" alt="Immagine 4">
             </div>
 
             <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -288,7 +297,6 @@
 
     <footer>
         <div class="container">
-          
             <h2>ISCRIVITI ALLA NOSTRA NEWSLETTER</h2>
             <p>Restate aggiornati su promozioni, offerte e novità di Astra!</p>
             <form action="/action_page.php">
