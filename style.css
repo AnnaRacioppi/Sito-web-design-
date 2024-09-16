@@ -198,8 +198,8 @@ p {
 }
 
 #carousel img {
-    max-width: 100%; /* Assicurati che le immagini nel carosello siano sempre contenute */
-    height: auto;    /* Mantieni l'aspect ratio */
+    max-width: 100%; 
+    height: auto;   
 }
 
 #carousel #prev,
@@ -224,32 +224,33 @@ p {
     right: 10px; 
 }
 
+   .image-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 10;
+        }
 
-    .image-container {
-        display: flex; /* Utilizzare Flexbox per allineare le immagini orizzontalmente */
-        justify-content: center; /* Centrare le immagini */
-        gap: 20px; /* Distanza tra le immagini */
-        padding: 20px; /* Padding per il contenitore */
-    }
+        .image-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .image-box img {
+            width: 400px; /* Imposta la larghezza a 200px (puoi adattare a tuo piacimento) */
+            height: auto; /* Mantiene le proporzioni dell'immagine */
+            max-height: 400px; /* Limita l'altezza massima delle immagini */
+            border-radius: 10px; /* Aggiunge un bordo arrotondato */
+        }
 
-    .image-box {
-        text-align: center; /* Centrare il testo sotto ogni immagine */
-    }
-
-    .image-box img {
-        max-width: 200px; /* Imposta la larghezza massima per le immagini */
-        height: auto; /* Mantieni le proporzioni */
-    }
-
-    .caption {
-        background-color: #fff;
-        border: 1px solid #D2B48C;
-        padding: 10px;
-        margin-top: 10px; /* Riduci la distanza sotto le immagini */
-        display: inline-block;
-    }
-
-
+        .caption {
+            background-color: #fff;
+            border: 1px solid #D2B48C;
+            padding: 5px;
+            margin-top: 3px; /* Spaziatura ridotta */
+            display: inline-block;
+            text-align: center; /* Allinea il testo al centro */
+        }
 
 #subtitle {
     position: absolute;
@@ -412,6 +413,23 @@ p {
     background-size: cover;
     background-position: center;
 }
+<div class="zone" id="promo">
+    <h2>SCOPRI IL MEGLIO PER TE</h2>
+    <div class="image-container">
+        <div class="image-box">
+            <img src="divanodoppio.png" alt="Divano Doppio">
+            <div class="caption">ARREDAMENTO</div>
+        </div>
+        <div class="image-box">
+            <img src="lavandino.png" alt="Lavandino">
+            <div class="caption">BAGNO</div>
+        </div>
+        <div class="image-box">
+            <img src="mouse.png" alt="Oggettistica">
+            <div class="caption">OGGETTISTICA</div>
+        </div>
+    </div>
+</div>
 
 .input-container {
     display: flex; 
