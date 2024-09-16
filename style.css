@@ -224,15 +224,20 @@ p {
     right: 10px; 
 }
 
-  .image-box {
-     width: calc(33.33% - 30px);
-    position: relative;
-    text-align: center;
-    border: 2px solid #D2B48C;
-    border-radius: 20px; 
-    padding: 10px; 
-    margin: 15px; 
-    transition: transform 0.3s, box-shadow 0.3s; 
+.image-box {
+    width: 300px; /* Imposta una larghezza fissa */
+    height: 200px; /* Imposta un'altezza fissa */
+    overflow: hidden; /* Nasconde eventuali parti delle immagini che escono dal riquadro */
+    position: relative; /* Necessario per posizionare la caption in modo corretto */
+}
+
+.image-box img {
+    width: 100%; /* Imposta la larghezza al 100% del riquadro */
+    height: auto; /* Mantiene le proporzioni originali dell'immagine */
+    position: absolute; /* Posiziona l'immagine all'interno del riquadro */
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); /* Centra l'immagine */
 }
  
 
